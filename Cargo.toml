@@ -1,7 +1,7 @@
 [package]
 name = "byteme"
 description = "Converts a struct into byte array `[u8]` by reading the fields in the struct."
-version = "0.0.2-dev"
+version = "0.0.3-dev"
 edition = "2021"
 authors = [
   "Yousuf Jawwad <yousuf@breu.io>",
@@ -24,10 +24,6 @@ path = "src/lib.rs"
 [[test]]
 name = "progress"
 path = "tests/progress.rs"
-
-[[bin]]
-name = "view"
-path = "src/view.rs"
 
 [dev-dependencies]
 trybuild = { version = "1.0.49", features = ["diff"] }
