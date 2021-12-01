@@ -1,21 +1,23 @@
 # byteme
 
-Macro to provide `from()` & `into()` implementations for a struct with either `enums` and positive integer field.
+A `proc-macro` to convert a struct into Vec<u8> and back by implemeting `From` trait on the struct.
+The conversion is Big Endian by default.
 
-We have made the following assumptions about the fields of the struct:
+We have made the following assumptions about the  the struct:
 
+- The struct must have fields.
 - The fields are public.
-- The fields will have the following types
+- The fields have the following types
   - `u8`
   - `u16`
   - `u32`
   - `u64`
   - `u128`
   - `usize`
-  - `[u8]`
+  - `[u8; N]`
   - an enum
 - For enum, we must attach a `#[byte_me($size)]` attribute, where size is any of the positive integer types.
-- The enum declration must `#[derive(FromPrimitive)]` from the `num-derive` crate.
+- The enum declration must have `#[derive(FromPrimitive)]` from the `num-derive` crate.
 
 The `num-derive` crate is required to generate the `FromPrimitive` trait for enums. Having said that, the same
 functionality can be achieved using `num-enum` crate. It provides furthur control over the enum data types,
@@ -61,3 +63,5 @@ let size = FrameOne::SIZE; // Get the number of bytes in the frame
 let bytes: Vec<u8> = frame.into(); // Converts the frame into vector of bytes
 let frame: FrameOne = bytes.into(); // Converts the bytes back to frame
 ```
+
+License: Apache-2.0

@@ -1,20 +1,20 @@
 [package]
 name = "byteme"
-description = "Converts a struct into byte array `[u8]` by reading the fields in the struct."
-version = "0.0.3-dev"
+description = "Converts a struct into Vec<u8> and back. The conversion is Big Endian by default."
+version = "0.0.4-dev"
 edition = "2021"
-authors = [
-  "Yousuf Jawwad <yousuf@breu.io>",
-]
+authors = ["Yousuf Jawwad <yousuf@breu.io>"]
 license = "Apache-2.0"
 repository = "https://github.com/breuHQ/byteme"
 documentation = "https://docs.rs/byteme"
 readme = "README.md"
-keywords = [
-  "proc-macro",
-  "bytes",
+keywords = ["proc-macro", "bytes"]
+categories = [
+  "development-tools::procedural-macro-helpers",
+  "encoding",
+  "rust-patterns",
+  "parser-implementations",
 ]
-categories = ["network-programming", "encoding"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [lib]
