@@ -1,7 +1,7 @@
 [package]
 name = "byteme"
 description = "Converts a struct into Vec<u8> and back. The conversion is Big Endian by default."
-version = "0.0.4-dev"
+version = "0.0.4-rc.1"
 edition = "2021"
 authors = ["Yousuf Jawwad <yousuf@breu.io>"]
 license = "Apache-2.0"
