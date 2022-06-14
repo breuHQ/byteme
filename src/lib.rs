@@ -72,7 +72,7 @@ use crate::models::{ByteMeField, ByteMeStruct};
 pub fn derive(tokens: proc_macro::TokenStream) -> proc_macro::TokenStream {
   let strukt = syn::parse_macro_input!(tokens as ByteMeStruct);
 
-  let fn_lines_to_bytes = strukt.fields.iter().clone().map(|field| to_bytes_fn_factory(field));
+  let fn_lines_to_bytes = strukt.fields.iter().clone().map(to_bytes_fn_factory);
 
   let count = core::cell::Cell::new(0_usize);
   let fn_line_from_bytes = strukt
@@ -83,7 +83,7 @@ pub fn derive(tokens: proc_macro::TokenStream) -> proc_macro::TokenStream {
 
   let name = &strukt.ident;
   let size: usize = strukt.fields.clone().iter().clone().map(|field| field.size).sum();
-  let fields = strukt.fields.iter().clone().map(|field| get_field_name(field));
+  let fields = strukt.fields.iter().clone().map(get_field_name);
   let processed = quote::quote! {
     impl #name {
       /// Size of the struct in bytes

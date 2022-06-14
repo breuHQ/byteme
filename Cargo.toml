@@ -1,7 +1,7 @@
 [package]
 name = "byteme"
 description = "Converts a struct into Vec<u8> and back. The conversion is Big Endian by default."
-version = "0.0.4"
+version = "0.0.5"
 edition = "2021"
 authors = ["Yousuf Jawwad <yousuf@breu.io>"]
 license = "Apache-2.0"
@@ -26,11 +26,11 @@ name = "progress"
 path = "tests/progress.rs"
 
 [dev-dependencies]
-trybuild = { version = "1.0.49", features = ["diff"] }
+trybuild = { version = "1.0.63", features = ["diff"] }
 
 [dependencies]
 num-derive = "0.3.3"
-num-traits = "0.2.14"
-proc-macro2 = "1.0.30"
-quote = "1.0.10"
-syn = { version = "1.0.80", features = ["full", "extra-traits"] }
+num-traits = "0.2.15"
+proc-macro2 = "1.0.39"
+quote = "1.0.18"
+syn = { version = "1.0.96", features = ["full", "extra-traits"] }
